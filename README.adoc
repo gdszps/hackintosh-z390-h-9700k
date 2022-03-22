@@ -70,3 +70,77 @@ If you don't have a GPU, you should remove `agdpmod=pikera` from boot-args, and 
 
 [NOTE]
 You should see https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#intel-bios-settings[Intel BIOS settings], and some BIOS settings only used for installation.
+
+=== Monterey AMD stuck BUG solution (Change the key to your graphics card DevicePath)
+Radeon 5500
+
+          <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+            <dict>
+                <key>@0,name</key>
+                <string>ATY,Python</string>
+                <key>@1,name</key>
+                <string>ATY,Python</string>
+                <key>@2,name</key>
+                <string>ATY,Python</string>
+                <key>@3,name</key>
+                <string>ATY,Python</string>
+            </dict>
+
+Radeon 5600 / 5700
+
+    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>@0,name</key>
+                    <string>ATY,Adder</string>
+                    <key>@1,name</key>
+                    <string>ATY,Adder</string>
+                    <key>@2,name</key>
+                    <string>ATY,Adder</string>
+                    <key>@3,name</key>
+                    <string>ATY,Adder</string>
+                </dict>
+
+Radeon 6600
+
+    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>@0,name</key>
+                    <string>ATY,Deepbay</string>
+                    <key>@1,name</key>
+                    <string>ATY,Deepbay</string>
+                    <key>@2,name</key>
+                    <string>ATY,Deepbay</string>
+                    <key>@3,name</key>
+                    <string>ATY,Deepbay</string>
+                </dict>
+
+Radeon 6800   
+
+    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>@0,name</key>
+                    <string>ATY,Belknap</string>
+                    <key>@1,name</key>
+                    <string>ATY,Belknap</string>
+                    <key>@2,name</key>
+                    <string>ATY,Belknap</string>
+                    <key>@3,name</key>
+                    <string>ATY,Belknap</string>
+                </dict>
+
+
+      
+
+Radeon 6900           
+
+    <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>@0,name</key>
+                    <string>ATY,Carswell</string>
+                    <key>@1,name</key>
+                    <string>ATY,Carswell</string>
+                    <key>@2,name</key>
+                    <string>ATY,Carswell</string>
+                    <key>@3,name</key>
+                    <string>ATY,Carswell</string>
+                </dict>
